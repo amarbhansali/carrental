@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KA Rentals | Holly Springs Turo Fleet</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+       </style>
+</head>
+<body class="min-h-screen bg-white text-slate-900 selection-red">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="showSection('fleet')">
+                    <svg viewBox="0 0 24 24" class="w-10 h-10 fill-red-600 drop-shadow-sm" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                    </svg>
+                    <div class="flex flex-col -space-y-1">
+                        <span class="text-2xl font-black tracking-tighter text-slate-900">KA RENTALS</span>
+                        <span class="text-[10px] font-bold text-red-600 tracking-widest uppercase pl-0.5">Holly Springs, NC</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-widest">
+                    <button onclick="showSection('fleet')" id="nav-fleet" class="text-red-600 hover:text-red-600 transition-colors py-2 relative">
+                        Our Fleet
+                        <span id="indicator-fleet" class="absolute bottom-0 left-0 w-full h-0.5 bg-red-600"></span>
+                    </button>
+                    <button onclick="showSection('contact')" id="nav-contact" class="text-slate-500 hover:text-red-600 transition-colors py-2 relative">
+                        Contact
+                        <span id="indicator-contact" class="absolute bottom-0 left-0 w-full h-0.5 bg-red-600 hidden"></span>
+                    </button>
+                </div>
+
+                <a href="https://turo.com/us/en/host/8016878" target="_blank" rel="noopener noreferrer" class="bg-slate-900 text-white px-6 py-3 rounded-xl text-xs font-black hover:bg-red-600 transition shadow-lg uppercase tracking-widest flex items-center gap-2">
+                    Book on Turo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="content-area">
+        <!-- Fleet Section (Default) -->
+        <div id="fleet-section">
+            <header class="relative bg-white pt-20 pb-32 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 border border-red-100 shadow-sm">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Turo All-Star Host
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tighter leading-none">
+                        Reliable Rides in <br/>
+                        <span class="text-red-600">Holly Springs.</span>
+                    </h1>
+                    <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
+                        Experience seamless, 5-star hosting by Amar Bhansali. 
+                        Premium fleet focused on reliability, cleanliness, and fuel efficiency.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center gap-3 bg-white px-6 py-4 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100">
+                            <i data-lucide="shield" class="text-red-600 w-5 h-5"></i>
+                            <span class="text-sm font-bold text-slate-700">Host ID: 8016878</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white px-6 py-4 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100">
+                            <i data-lucide="map-pin" class="text-red-600 w-5 h-5"></i>
+                            <span class="text-sm font-bold text-slate-700">Raleigh/Durham Area</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 -mr-20 mt-10 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-50 z-0"></div>
+                <div class="absolute bottom-0 left-0 -ml-20 mb-10 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-50 z-0"></div>
+            </header>
+
+            <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-slate-50/30">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <p class="text-red-600 font-black text-xs uppercase tracking-[0.3em] mb-3">The Selection</p>
+                        <h2 class="text-4xl font-black text-slate-900 tracking-tighter uppercase">Available Fleet</h2>
+                    </div>
+                    <div class="h-0.5 flex-grow mx-8 bg-slate-100 hidden md:block"></div>
+                    <p class="text-slate-400 font-bold text-xs uppercase tracking-widest">
+                        Serving Holly Springs, Cary & Apex
+                    </p>
+                </div>
+
+                <div id="fleet-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Cards will be injected here by JS -->
+                </div>
+                
+                <div class="mt-20 text-center">
+                    <a href="https://turo.com/us/en/host/8016878" target="_blank" class="inline-flex items-center gap-3 text-slate-400 font-black uppercase tracking-[0.3em] text-xs hover:text-red-600 transition-colors py-4 border-b border-transparent hover:border-red-600">
+                        Explore Full Profile on Turo <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </main>
+        </div>
+
+        <!-- Contact Section (Hidden by default) -->
+        <div id="contact-section" class="hidden">
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <p class="text-red-600 font-black text-xs uppercase tracking-[0.4em] mb-4">Get in Touch</p>
+                        <h2 class="text-6xl font-black text-slate-900 mb-8 uppercase tracking-tighter leading-none">Connect with <span class="text-red-600">Amar.</span></h2>
+                        <p class="text-xl text-slate-500 mb-12 font-medium leading-relaxed">
+                            Fast response times and professional service. For direct bookings and full insurance protection, all trips are facilitated through the Turo platform.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-6 bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                                <div class="bg-red-600 p-4 rounded-2xl text-white shadow-lg shadow-red-100">
+                                    <i data-lucide="user" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Host Name</p>
+                                    <p class="text-xl font-black text-slate-900">Amar Bhansali</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                                <div class="bg-slate-900 p-4 rounded-2xl text-red-500">
+                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Service Area</p>
+                                    <p class="text-xl font-black text-slate-900">Holly Springs, NC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-10 md:p-14 rounded-[3rem] border border-slate-100 shadow-2xl relative">
+                        <h3 class="text-2xl font-black mb-8 uppercase tracking-tighter">Rental Inquiry</h3>
+                        <form class="space-y-6" onsubmit="event.preventDefault(); window.open('https://turo.com/us/en/host/8016878', '_blank');">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
+                                <input type="text" required class="w-full bg-slate-50 border-none rounded-2xl p-5 focus:ring-2 focus:ring-red-600 transition outline-none font-bold" placeholder="Your Name">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Trip Details</label>
+                                <textarea rows="4" required class="w-full bg-slate-50 border-none rounded-2xl p-5 focus:ring-2 focus:ring-red-600 transition outline-none font-bold resize-none" placeholder="Dates and car preference..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-red-600 text-white font-black py-6 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-red-200 flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
+                                Message via Turo <i data-lucide="send" class="w-4.5 h-4.5"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-20 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="flex items-center gap-3">
+                    <svg viewBox="0 0 24 24" class="w-8 h-8 fill-red-600" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black tracking-tighter">KA RENTALS</span>
+                        <span class="text-[10px] font-bold text-red-600 tracking-widest uppercase">Holly Springs</span>
+                    </div>
+                </div>
+                
+                <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <button onclick="showSection('fleet')" class="hover:text-red-600">Fleet</button>
+                    <button onclick="showSection('contact')" class="hover:text-red-600">Contact</button>
+                    <a href="https://turo.com/us/en/host/8016878" target="_blank" class="hover:text-red-600">Turo Profile</a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-50 text-center">
+                <p class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.4em]">
+                    © <span id="year"></span> KA RENTALS • Host ID: 8016878 • Holly Springs, NC
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data
+        const FLEET = [
+            {
+                id: 1,
+                make: "Toyota",
+                model: "Camry",
+                year: 2020,
+                range: "34 MPG",
+                seats: 5,
+                description: "A favorite for Holly Springs locals and RDU travelers alike. Exceptionally clean, great on gas, and features a spacious interior for a comfortable NC commute.",
+                image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=800",
+                price: 55
+            },
+            {
+                id: 2,
+                make: "Toyota",
+                model: "Corolla",
+                year: 2018,
+                range: "32 MPG",
+                seats: 5,
+                description: "The perfect daily driver. Known for its reliability and easy handling. Ideal for short-term visits to the Research Triangle Park or long-term extensions.",
+                image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=800",
+                price: 48
+            },
+            {
+                id: 3,
+                make: "Toyota",
+                model: "Camry",
+                year: 2016,
+                range: "30 MPG",
+                seats: 5,
+                description: "Meticulously maintained and highly rated by past guests. Offers a premium feel at an affordable price point for budget-conscious travelers.",
+                image: "https://images.unsplash.com/photo-1616455572814-e5ad51169d27?auto=format&fit=crop&q=80&w=800",
+                price: 42
+            }
+        ];
+
+        // UI Functions
+        function renderFleet() {
+            const grid = document.getElementById('fleet-grid');
+            grid.innerHTML = FLEET.map(car => `
+                <div class="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-red-100/50 transition-all duration-500 flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="${car.image}" alt="${car.model}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-5 left-5">
+                            <span class="bg-white/95 text-slate-900 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
+                                ${car.year} Model
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter uppercase">${car.make} ${car.model}</h3>
+                            <div class="bg-red-50 text-red-600 px-3 py-1 rounded-lg text-sm font-black border border-red-100">
+                                $${car.price}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <div class="bg-slate-50 p-3 rounded-2xl flex items-center gap-2 border-l-4 border-red-600">
+                                <i data-lucide="fuel" class="w-4 h-4 text-slate-400"></i>
+                                <span class="text-[10px] font-black uppercase text-slate-600 tracking-wider">${car.range}</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-2xl flex items-center gap-2 border-l-4 border-red-600">
+                                <i data-lucide="users" class="w-4 h-4 text-slate-400"></i>
+                                <span class="text-[10px] font-black uppercase text-slate-600 tracking-wider">${car.seats} Seats</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-8 font-medium">${car.description}</p>
+                        <a href="https://turo.com/us/en/host/8016878" target="_blank" class="mt-auto flex items-center justify-center gap-3 bg-slate-900 text-white font-black py-4 rounded-2xl hover:bg-red-600 transition-all group/btn shadow-xl shadow-slate-100">
+                            BOOK ON TURO
+                            <i data-lucide="chevron-right" class="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function showSection(section) {
+            const fleetSec = document.getElementById('fleet-section');
+            const contactSec = document.getElementById('contact-section');
+            const navFleet = document.getElementById('nav-fleet');
+            const navContact = document.getElementById('nav-contact');
+            const indFleet = document.getElementById('indicator-fleet');
+            const indContact = document.getElementById('indicator-contact');
+
+            if (section === 'fleet') {
+                fleetSec.classList.remove('hidden');
+                contactSec.classList.add('hidden');
+                navFleet.classList.replace('text-slate-500', 'text-red-600');
+                navContact.classList.replace('text-red-600', 'text-slate-500');
+                indFleet.classList.remove('hidden');
+                indContact.classList.add('hidden');
+            } else {
+                fleetSec.classList.add('hidden');
+                contactSec.classList.remove('hidden');
+                navFleet.classList.replace('text-red-600', 'text-slate-500');
+                navContact.classList.replace('text-slate-500', 'text-red-600');
+                indFleet.classList.add('hidden');
+                indContact.classList.remove('hidden');
+            }
+            window.scrollTo(0,0);
+        }
+
+        // Init
+        document.getElementById('year').textContent = new Date().getFullYear();
+        renderFleet();
+        lucide.createIcons();
+    </script>
+</body>
+</html>
