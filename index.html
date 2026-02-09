@@ -107,19 +107,6 @@
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <div class="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <div class="flex items-center gap-3 bg-white px-6 py-4 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100">
-                            <i data-lucide="shield" class="text-red-600 w-5 h-5"></i>
-                            <span class="text-sm font-bold text-slate-700">North Carolina</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-white px-6 py-4 rounded-2xl shadow-xl shadow-slate-200 border border-slate-100">
-                            <i data-lucide="map-pin" class="text-red-600 w-5 h-5"></i>
-                            <span class="text-sm font-bold text-slate-700">RDU / Cary / Apex / Holly Springs Area</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute top-0 right-0 -mr-20 mt-10 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-50 z-0"></div>
-                <div class="absolute bottom-0 left-0 -ml-20 mb-10 w-96 h-96 bg-slate-50 ro
                         <p class="text-red-600 font-black text-xs uppercase tracking-[0.4em] mb-4">Get in Touch</p>
                         <h2 class="text-6xl font-black text-slate-900 mb-8 uppercase tracking-tighter leading-none">Connect with <span class="text-red-600">Amar.</span></h2>
                         <p class="text-xl text-slate-500 mb-12 font-medium leading-relaxed">
@@ -234,14 +221,74 @@
                 description: "Meticulously maintained and highly rated. Offers a premium feel at an affordable price point for budget-conscious travelers looking for reliability.",
                 image: "https://images.turo.com/media/vehicle/images/Pn6e_c0NTGaezBWoDvkR-A.1242x745.jpg",
                 price: 25,
-                turoUrl: "https://turo.com/us/en/car-rental/united-states/holly-springs-nc/toyota/camry/3471806?endDate=03%2F02%2F2026&endTime=10%3A00&startDate=02%2F27%2F2026&startTime=10%3A00"
+                turoUrl: "https://turo.com/us/en/car-rental/united-states/holly-springs-nc/toyota/camry/3471806"
+            },
+            {
+                id: 4,
+                make: "Toyota",
+                model: "Corolla",
+                year: 2022,
+                range: "35 MPG",
+                seats: 5,
+                description: "Excellent fuel efficiency and modern safety features. Perfect for commuters or solo travelers looking for a smooth, reliable ride around the Triangle.",
+                image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&q=80&w=800",
+                price: 22,
+                turoUrl: "https://turo.com/us/en/host/8016878"
+            },
+            {
+                id: 5,
+                make: "Honda",
+                model: "Civic",
+                year: 2020,
+                range: "34 MPG",
+                seats: 5,
+                description: "A sporty yet practical choice with great handling. Features a modern interior and smartphone integration for an effortless driving experience.",
+                image: "https://images.unsplash.com/photo-1594070319944-7c0c63805bc1?auto=format&fit=crop&q=80&w=800",
+                price: 24,
+                turoUrl: "https://turo.com/us/en/host/8016878"
+            },
+            {
+                id: 6,
+                make: "Jeep",
+                model: "Grand Cherokee",
+                year: 2019,
+                range: "22 MPG",
+                seats: 5,
+                description: "Rugged luxury for those needing extra space and capability. Ideal for road trips or weekend getaways where comfort and presence are prioritized.",
+                image: "https://images.unsplash.com/photo-1563720223185-11003d516905?auto=format&fit=crop&q=80&w=800",
+                price: 48,
+                turoUrl: "https://turo.com/us/en/host/8016878"
+            },
+            {
+                id: 7,
+                make: "Toyota",
+                model: "Sienna",
+                year: 2021,
+                range: "36 MPG",
+                seats: 7,
+                description: "The ultimate family hybrid. Remarkable gas mileage for a vehicle this size. Premium interior and sliding doors make it the best choice for group travel.",
+                image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800",
+                price: 52,
+                turoUrl: "https://turo.com/us/en/host/8016878"
+            },
+            {
+                id: 8,
+                make: "Chevrolet",
+                model: "Suburban",
+                year: 2018,
+                range: "18 MPG",
+                seats: 8,
+                description: "Maximum utility and passenger space. When you need to move a large group and all their luggage in comfort, the Suburban is the gold standard.",
+                image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=800",
+                price: 65,
+                turoUrl: "https://turo.com/us/en/host/8016878"
             }
         ];
 
         // UI Functions
         function renderFleet() {
             const grid = document.getElementById('fleet-grid');
-            if (!grid) return; // Guard clause
+            if (!grid) return; 
             
             grid.innerHTML = FLEET.map(car => `
                 <div class="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-red-100/50 transition-all duration-500 flex flex-col">
@@ -315,23 +362,10 @@
         
         // Immediate call if DOM is already parsed
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            document.getElementById('year').textContent = new Date().getFullYear();
+            const yr = document.getElementById('year');
+            if (yr) yr.textContent = new Date().getFullYear();
             renderFleet();
         }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
